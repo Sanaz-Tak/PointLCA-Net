@@ -80,7 +80,7 @@ python data_preparation/generate_data_shd.py --split both --num-points 1024
 ```bash
 # Train PointNet on N-MNIST
 python train_classification_nmnist_processed.py \
-    --batch_size 24 \
+    --batch_size 16 \
     --epoch 200 \
     --num_point 1024 \
     --learning_rate 0.001 \
@@ -93,7 +93,7 @@ python train_classification_nmnist_processed.py \
 ```bash
 # Train PointNet on DVS128
 python train_classification_dvs128_processed.py \
-    --batch_size 24 \
+    --batch_size 16 \
     --epoch 200 \
     --num_point 1024 \
     --learning_rate 0.001 \
@@ -106,7 +106,7 @@ python train_classification_dvs128_processed.py \
 ```bash
 # Train PointNet on SHD
 python train_classification_shd_processed.py \
-    --batch_size 24 \
+    --batch_size 16 
     --epoch 200 \
     --num_point 1024 \
     --learning_rate 0.001 \
@@ -143,29 +143,6 @@ python Run-PT-SHD-Decoder.py \
     --data_dir ./processed_data/shd \
     --num_point 1024
 ```
-
-## Configuration
-
-### Key Hyperparameters
-
-| Parameter | N-MNIST | DVS128 | SHD | Description |
-|--|--|--|--|--|
-| `dictionary_size` | 60000 | 28606 | 8156 | LCA dictionary size |
-| `lambda_sparsity` | 0.2 | 0.2 | 0.2 | Sparsity coefficient |
-| `batch_size` | 24 | 24 | 24 | Processing batch size |
-| `neuron_iterations` | 100 | 100 | 100 | LCA neuron update iterations |
-| `num_points` | 1024 | 1024 | 1024 | Points per point cloud |
-
-### Training Parameters
-
-| Parameter | Default | Description |
-|--|--|--|
-| `--epoch` | 200 | Number of training epochs |
-| `--learning_rate` | 0.001 | Learning rate for optimization |
-| `--batch_size` | 24 | Training batch size |
-| `--num_point` | 1024 | Number of points per sample |
-| `--use_cpu` | False | Force CPU-only training |
-| `--gpu` | 0 | GPU device ID |
 
 ## Project Structure
 
