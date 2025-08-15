@@ -142,7 +142,7 @@ processed_data/
 *.aedat
 *.bin
 *.csv
-*.txt
+
 
 # Large files
 *.zip
